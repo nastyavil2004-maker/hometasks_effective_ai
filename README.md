@@ -1,0 +1,1 @@
+# hometasks_effective_ai
