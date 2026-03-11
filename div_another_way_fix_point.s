@@ -17,36 +17,41 @@ inverse_b:
 res:
 	DB 0x00
 control_points:
-	DB 0x02
-	DB 0x08 
-  	DB 0x05 
-  	DB 0x04 
-	DB 0x03 
-	DB 0x02 
-	DB 0x01 
+	DB 0x02, 0x03, 0x04, 0x05, 0x07, 0x0B, 0x0F 
 
 start:
 	MOV A, [a_val]
 	MOV B, [b_val]
-	MOV C, [inverse_b]
+	;MOV C, [inverse_b]
+    MOV C, control_points
 	MOV D, [control_points]
 	CMP D, B
-	JG inv_1
-	INC D
+	JA inv_1
+	;MOV D, [control_points + 1]
+    INC C
+    MOV D, [C]
 	CMP D, B
-	JG inv_2
-	INC D
+	JA inv_2
+    
+    INC C
+    MOV D, [C]
 	CMP D, B
-	JG inv_3
-	INC D
+	JA inv_3
+    
+    INC C
+    MOV D, [C]
 	CMP D, B
-	JG inv_4	
-	INC D
+	JA inv_4
+    
+    INC C
+    MOV D, [C]
 	CMP D, B
-	JG inv_5
-	INC D
+	JA inv_5
+    
+    INC C
+    MOV D, [C]
 	CMP D, B
-	JG inv_6
+	JA inv_6
 
 	MOV C, 0x01
 	MUL C
