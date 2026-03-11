@@ -55,36 +55,43 @@ start:
 
 	MOV C, 0x01
 	MUL C
+	SHR A, 2
 	MOV [res], A
 	HLT
 
 inv_1:
 	MOV C, 0x0F
 	MUL C
+	SHR A, 2
 	MOV [res], A
 	HLT
 inv_2:
 	MOV C, 0x08
 	MUL C
+	SHR A, 2
 	MOV [res], A
 	HLT
 inv_3:
 	MOV C, 0x05
 	MUL C
+	SHR A, 2
 	MOV [res], A
 	HLT
 inv_4:
 	MOV C, 0x04
 	MUL C
+	SHR A, 2
 	MOV [res], A
 	HLT
 inv_5:
 	MOV C, 0x03
 	MUL C
+	SHR A, 2
 	MOV [res], A
 	HLT
 inv_6:
 	MOV C, 0x02
 	MUL C
+	SHR A, 2
 	MOV [res], A
 	HLT
