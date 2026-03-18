@@ -1,8 +1,7 @@
 JMP start
-vect: DB 1.0_h, 2.0_h, 0.5_h
+vect: DB 3.75_h, 1.0_h, 2.5_h
 len: DB 3
 max: DB 0.0_h
-res: DB 0.0_h
 
 start:
     MOV A, vect
@@ -30,10 +29,9 @@ new_max:
     JA loop
     JMP done
 done:
-    MOV B, res
-    ;FMOV.H [B], FHC
+    ;FMOV.H [C], FHC
     FMOV.H FHA, FHC
-    FMOV.H [B], FHA
+    FMOV.H [C], FHA
     MOV D, 232
     CALL print_f16_3 ; взяла Вашу реализацию для вывода
     HLT
